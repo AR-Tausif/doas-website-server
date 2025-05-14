@@ -1,8 +1,11 @@
 import express from "express"
 import { errorHandler } from "./middlewares/errorHandler";
+import { duaRouter } from "./routes/dua.route";
 const app = express();
 
-app.use("/", (req, res) => {
+app.use("/dua", duaRouter);
+
+app.get("/", (req, res) => {
     res.status(200).json({
         message: "hello world"
     });
